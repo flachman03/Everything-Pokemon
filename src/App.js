@@ -12,7 +12,7 @@ class App extends React.Component {
       currentPokemon: {}
     }
   }
-  
+
   componentDidMount() {
 
   }
@@ -22,7 +22,25 @@ class App extends React.Component {
     return (
       <main className="App">
         <header className="app__header">
+          <div className="title-styling">
+          <PokeSprite
+            pokemon={'pikachu'}
+            className="animated-sprites"
+          />
+          <PokeSprite
+            pokemon={'squirtle'}
+            className="animated-sprites"
+          />
           <button className="app-logo" />
+          <PokeSprite
+            pokemon={'charmander'}
+            className="animated-sprites"
+          />
+          <PokeSprite
+            pokemon={'bulbasaur'}
+            className="animated-sprites"
+          />
+          </div>
           <ul className='header__nav'>
             <NavLink to="/" className='nav__home'>Home</NavLink>
             <NavLink to="/pokedex" className='nav__pokedex'>Pokedex</NavLink>

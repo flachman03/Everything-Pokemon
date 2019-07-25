@@ -10,10 +10,17 @@
   height: 30vh;
 }
 
-.pokemon-class {
-  height: 100px;
-  width: 100px
+.title-styling {
+  display: flex;
+  justify-content: space-around
 }
+
+.animated-sprites {
+  height: 100px;
+  width: 100px;
+  align-self: center;
+}
+
 .app-logo {
   height: 200px;
   width: 500px;

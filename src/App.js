@@ -11,7 +11,7 @@ class App extends React.Component {
   }
   async componentDidMount() {
     try {
-      const url = 'https://pokeapi.co/api/v2/pokemon/lugia'
+      const url = 'https://pokeapi.co/api/v2/pokemon/'
       const response = await fetch(url)
       const data = await response.json()
       this.setState({currentPokemon: data})
@@ -26,11 +26,13 @@ class App extends React.Component {
     return (
       <main className="App">
         <header className="App-header">
-          <ul>
-            <li>Home</li>
-            <li>Pokedex</li>
-            <li>Items</li>
-            <li>Moves</li>
+          <ul className='header-nav'>
+            <li className='nav-home'>Home</li>
+            <li className='nav-pokedex'>Pokedex</li>
+            <li className='nav-items'>Items</li>
+            <li className='nav-moves'>Moves</li>
+            <li className='Nav-regions'>Regions</li>
+            <li className='nav-games'>Games</li>
           </ul>
         </header>
       </main>

@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import PokeSprite from 'react-poke-sprites'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      currentPokemon: {}
+    }
+  }
+  async componentDidMount() {
+    try {
+      const url = 'https://pokeapi.co/api/v2/pokemon/lugia'
+      const response = await fetch(url)
+      const data = await response.json()
+      this.setState({currentPokemon: data})
+    }
+    catch {
+      console.log('error')
+    }
+  }
+
+  render() {
+    
+    return (
+      <main className="App">
+        <header className="App-header">
+          <ul>
+            <li>Home</li>
+            <li>Pokedex</li>
+            <li>Items</li>
+            <li>Moves</li>
+          </ul>
+        </header>
+      </main>
+    );
+  }
 }
 
 export default App;

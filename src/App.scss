@@ -3,28 +3,11 @@
 .App {
   text-align: center;
   animation: change-backgrounds 100s ease-in-out infinite;
-  background-size: cover;
   height: 100vh;
 }
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+.app__header {
+  height: 30vh;
 }
 
 .pokemon-class {
@@ -32,19 +15,33 @@
   width: 100px
 }
 .app-logo {
-  height: 300px;
+  height: 200px;
   width: 500px;
   background: url('./Images/pokemon-logo-vector.png');
   border: none;
   background-size: cover;
-  background-position-y: 80%
+  background-position-y: 50%;
+}
+
+.header__nav {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  & * {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 @keyframes change-backgrounds {
   0% {
     background: url('./Images/app-background.jpg');
     background-size: cover;
   }
-  24% {
+  23% {
     background: url('./Images//app-background.jpg');
     background-size: cover;
   }
@@ -52,7 +49,7 @@
     background: url('./Images/bulbasaur-background.jpg');
     background-size: cover;
   }
-  49% {
+  48% {
     background: url('./Images/bulbasaur-background.jpg');
     background-size: cover;
   }
@@ -60,7 +57,7 @@
     background: url('./Images/charmander-background.jpg');
     background-size: cover;
   }
-  74% {
+  73% {
     background: url('./Images/charmander-background.jpg');
     background-size: cover;
   }

@@ -14,7 +14,8 @@
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
     "router": "^1.3.3",
-    "sass": "^1.22.8"
+    "sass": "^1.22.8",
+    "thunks": "^4.9.4"
   },
   "scripts": {
     "start": "react-scripts start",

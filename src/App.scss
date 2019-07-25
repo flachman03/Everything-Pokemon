@@ -1,0 +1,79 @@
+
+
+.App {
+  text-align: center;
+  animation: change-backgrounds 100s ease-in-out infinite;
+  height: 100vh;
+}
+
+.app__header {
+  height: 30vh;
+}
+
+.title-styling {
+  display: flex;
+  justify-content: space-around
+}
+
+.animated-sprites {
+  height: 100px;
+  width: 100px;
+  align-self: center;
+}
+
+.app-logo {
+  height: 200px;
+  width: 500px;
+  background: url('./Images/pokemon-logo-vector.png');
+  border: none;
+  background-size: cover;
+  background-position-y: 50%;
+}
+
+.header__nav {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  & * {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+@keyframes change-backgrounds {
+  0% {
+    background: url('./Images/app-background.jpg');
+    background-size: cover;
+  }
+  23% {
+    background: url('./Images//app-background.jpg');
+    background-size: cover;
+  }
+  25% {
+    background: url('./Images/bulbasaur-background.jpg');
+    background-size: cover;
+  }
+  48% {
+    background: url('./Images/bulbasaur-background.jpg');
+    background-size: cover;
+  }
+  50% {
+    background: url('./Images/charmander-background.jpg');
+    background-size: cover;
+  }
+  73% {
+    background: url('./Images/charmander-background.jpg');
+    background-size: cover;
+  }
+  75% {
+    background: url('./Images/squirtle-background.jpg');
+    background-size: cover;
+  }
+  100% {
+    background: url('./Images/squirtle-background.jpg');
+    background-size: cover;
+  }
+}

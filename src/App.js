@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import PokeSprite from 'react-poke-sprites'
 
 class App extends React.Component {
@@ -25,16 +25,20 @@ class App extends React.Component {
     
     return (
       <main className="App">
-        <header className="App-header">
-          <ul className='header-nav'>
-            <li className='nav-home'>Home</li>
-            <li className='nav-pokedex'>Pokedex</li>
-            <li className='nav-items'>Items</li>
-            <li className='nav-moves'>Moves</li>
-            <li className='Nav-regions'>Regions</li>
-            <li className='nav-games'>Games</li>
+        <header className="app__header">
+          <h1><img src="/static/media/pokemon-logo-vector.29d6e9ae.png" alt="logo"/></h1>
+          <ul className='header__nav'>
+            <li className='nav__home'>Home</li>
+            <li className='nav__pokedex'>Pokedex</li>
+            <li className='nav__items'>Items</li>
+            <li className='nav__moves'>Moves</li>
+            <li className='Nav__regions'>Regions</li>
+            <li className='nav__games'>Games</li>
           </ul>
         </header>
+        <section className="app__section-container">
+
+        </section>
       </main>
     );
   }

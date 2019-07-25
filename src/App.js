@@ -3,7 +3,9 @@ import './App.scss';
 import PokeSprite from 'react-poke-sprites'
 import logo from './Images/pokemon-logo-vector.png'
 import { Route, NavLink, Switch } from 'react-router-dom'
+import { connect } from 'react-redux'
 import { CardContainer } from './Containers/CardContainer/CardContainer'
+import { getPokeThunk, getItemsThunk } from './Thunks/index'
 
 class App extends React.Component {
   constructor() {
@@ -14,7 +16,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-
+    this.props.getPokemon()
+    this.props.getItems()
   }
 
   render() {
@@ -69,4 +72,12 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = store => ({
+  ...store
+})
+
+const mapDispatchToProps = dispatch => ({
+  getPokemon: () => dispatch(getPokeThunk()),
+  getItems: () => dispatch(getItemsThunk())
+})
+export default connect(mapStateToProps, mapDispatchToProps)(App);

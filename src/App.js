@@ -8,6 +8,7 @@ import { getPokeThunk } from './Thunks/pokemonThunks'
 import { getItemsThunk } from './Thunks/itemThunks'
 import { getMovesThunk } from './Thunks/movesThunk'
 import { getRegionsThunk } from './Thunks/regionsThunk'
+import { getGamesThunk } from './Thunks/gameThunks'
 
 class App extends React.Component {
   constructor() {
@@ -22,6 +23,7 @@ class App extends React.Component {
     this.props.getItems()
     this.props.getMoves()
     this.props.getRegions()
+    this.props.getGames()
   }
 
   render() {
@@ -84,6 +86,7 @@ const mapDispatchToProps = dispatch => ({
   getPokemon: () => dispatch(getPokeThunk()),
   getItems: () => dispatch(getItemsThunk()),
   getMoves: () => dispatch(getMovesThunk()),
-  getRegions: () => dispatch(getRegionsThunk())
+  getRegions: () => dispatch(getRegionsThunk()),
+  getGames: () => dispatch(getGamesThunk())
 })
 export default connect(mapStateToProps, mapDispatchToProps)(App);

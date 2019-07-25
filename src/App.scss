@@ -2,7 +2,7 @@
 
 .App {
   text-align: center;
-  background: url('./Images//app-background.jpg');
+  animation: change-backgrounds 100s ease-in-out infinite;
   background-size: cover;
   height: 100vh;
 }
@@ -27,16 +27,49 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .pokemon-class {
   height: 100px;
   width: 100px
+}
+.app-logo {
+  height: 300px;
+  width: 500px;
+  background: url('./Images/pokemon-logo-vector.png');
+  border: none;
+  background-size: cover;
+  background-position-y: 80%
+}
+@keyframes change-backgrounds {
+  0% {
+    background: url('./Images/app-background.jpg');
+    background-size: cover;
+  }
+  24% {
+    background: url('./Images//app-background.jpg');
+    background-size: cover;
+  }
+  25% {
+    background: url('./Images/bulbasaur-background.jpg');
+    background-size: cover;
+  }
+  49% {
+    background: url('./Images/bulbasaur-background.jpg');
+    background-size: cover;
+  }
+  50% {
+    background: url('./Images/charmander-background.jpg');
+    background-size: cover;
+  }
+  74% {
+    background: url('./Images/charmander-background.jpg');
+    background-size: cover;
+  }
+  75% {
+    background: url('./Images/squirtle-background.jpg');
+    background-size: cover;
+  }
+  100% {
+    background: url('./Images/squirtle-background.jpg');
+    background-size: cover;
+  }
 }

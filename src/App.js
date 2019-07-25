@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
 import PokeSprite from 'react-poke-sprites'
+import logo from './Images/pokemon-logo-vector.png'
 
 class App extends React.Component {
   constructor() {
@@ -26,7 +27,10 @@ class App extends React.Component {
     return (
       <main className="App">
         <header className="app__header">
-          <h1><img src="/static/media/pokemon-logo-vector.29d6e9ae.png" alt="logo"/></h1>
+          {/* <h1 className=""><img src="/static/media/pokemon-logo-vector.29d6e9ae.png" 
+            alt="logo"
+            className="app-logo"/></h1> */}
+            <button className="app-logo" />
           <ul className='header__nav'>
             <li className='nav__home'>Home</li>
             <li className='nav__pokedex'>Pokedex</li>

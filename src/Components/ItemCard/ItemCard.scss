@@ -1,0 +1,26 @@
+.item-card {
+  height: 100px;
+  width: 150px;
+  margin: 10px;
+  padding: 0;
+  background: hsla(254, 0%, 0%, 0.7);
+  border: none;
+  color: white;
+  font-size: 20px;
+  border-radius: 20px;
+  outline: none;
+  &:hover {
+    background: #91D1E2;
+  }
+  &:active {
+    background: red;
+  }
+}
+.item-card__image {
+  height: 60px;
+  width: 60px;
+}
+
+.item-card__name {
+  margin: 0;
+}

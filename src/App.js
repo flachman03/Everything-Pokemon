@@ -10,6 +10,7 @@ import { getMovesThunk } from './Thunks/movesThunk'
 import { getRegionsThunk } from './Thunks/regionsThunk'
 import { getGamesThunk } from './Thunks/gameThunks'
 import { PokemonContainer } from './Containers/PokemonContainer/PokemonContainer'
+import { ItemContainer } from './Containers/ItemContainer/ItemContainer' 
 
 class App extends React.Component {
   constructor() {
@@ -64,7 +65,9 @@ class App extends React.Component {
           <Route exact path="/pokedex" render={() => (
             <PokemonContainer data={this.props.pokemon}/>
           )}/>
-          <Route exact path="/items" /> 
+          <Route exact path="/items" render={() => (
+            <ItemContainer data={this.props.items} />
+          )}/> 
           <Route exact path="/moves" />
           <Route exact path="/regions" />
           <Route exact path="/games" />

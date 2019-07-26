@@ -2,3 +2,15 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.container__buttons {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.poke-button {
+  width: 100px;
+  height: 30px;
+  margin: 10px;
+}

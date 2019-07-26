@@ -12,7 +12,6 @@ export const getMovesThunk = dispatch => {
         return data
       })
       const moveData = await Promise.all(allMoveData)
-      console.log(moveData)
       dispatch(getMoves(moveData))
     }
     catch (error) {

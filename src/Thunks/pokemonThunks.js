@@ -31,7 +31,7 @@ export const getMorePokemonThunk = (offset, dispatch)  => {
         const data = await response.json()
         return data
       })
-      const pokeData = Promise.all(allPokeData)
+      const pokeData = await Promise.all(allPokeData)
       dispatch(getPokemon(pokeData))
     }
     catch (error){

@@ -11,7 +11,7 @@
   height: 100%;
   flex: 2;
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 .category-list {
   display: flex;
@@ -35,4 +35,25 @@
   &:active {
     background: red;
   }
+}
+.category-more__buttons {
+  padding: 0;
+}
+.more-item__button {
+  width: 50%;
+  height: 25px;
+  background: hsla(205, 74%, 73%, 0.77);
+  border: none;
+  color: white;
+  font-size: 20px;
+  border-radius: 20px;
+  outline: none;
+  float: left;
+  &:hover {
+    background: hsla(205, 74%, 95%, 0.77)
+  }
+  &:active {
+    background: hsla(360, 78%, 55%, 0.77)
+  }
+
 }

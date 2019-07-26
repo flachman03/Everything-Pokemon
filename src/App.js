@@ -9,7 +9,7 @@ import { getItemsThunk } from './Thunks/itemThunks'
 import { getMovesThunk } from './Thunks/movesThunk'
 import { getRegionsThunk } from './Thunks/regionsThunk'
 import { getGamesThunk } from './Thunks/gameThunks'
-import { PokemonContainer } from './Containers/PokemonContainer/PokemonContainer'
+import  PokemonContainer  from './Containers/PokemonContainer/PokemonContainer'
 import { ItemContainer } from './Containers/ItemContainer/ItemContainer' 
 
 class App extends React.Component {

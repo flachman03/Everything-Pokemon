@@ -18,6 +18,18 @@ export class ItemContainer extends React.Component {
       .then(data => this.setState({categories: data.results}))
   }
 
+  handleMoreCategories() {
+    this.setState({offset: this.state.offset + 20})
+    getItemCategories(this.state.offset)
+      .then(data => this.setState({categories: data.results}))
+  }
+
+  handlePrevCategories() {
+    this.setState({offset: this.state.offset -20})
+    getItemCategories(this.state.offset)
+      .then(data => this.setState({categories: data.results}))
+  }
+
   render() {
     const { data } = this.props
     const displayItems = data.map( item => {
@@ -33,6 +45,16 @@ export class ItemContainer extends React.Component {
         <article className="display-category__article">
           <ul className="category-list">
             {displayCategories}
+          </ul>
+          <ul className="category-more__buttons">
+            <button 
+            className="more-item__button"
+            onClick={() => this.handlePrevCategories()}
+            >Previous Categories</button>
+            <button 
+            className="more-item__button"
+            onClick={() => this.handleMoreCategories()}
+            >More Categories</button>
           </ul>
         </article>
         <article className="display-item__article">

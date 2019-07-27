@@ -19,14 +19,14 @@ export class ItemContainer extends React.Component {
       .then(data => this.setState({categories: data.results}))
   }
 
-  handleMoreCategories() {
-    this.setState({offset: this.state.offset + 20})
+  async handleMoreCategories() {
+    await this.setState({offset: Math.min(this.state.offset + 20, 40)})
     getItemCategories(this.state.offset)
       .then(data => this.setState({categories: data.results}))
   }
 
-  handlePrevCategories() {
-    this.setState({offset: this.state.offset -20})
+  async handlePrevCategories() {
+    await this.setState({offset: Math.max(this.state.offset - 20, 0)})
     getItemCategories(this.state.offset)
       .then(data => this.setState({categories: data.results}))
   }

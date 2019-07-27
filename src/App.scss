@@ -1,4 +1,4 @@
-
+@import './index.scss';
 
 .App {
   text-align: center;
@@ -7,7 +7,9 @@
 }
 
 .app__header {
-  height: 30vh;
+  height: 250px;
+  background: url('./Images/header-background.jpeg');
+  border-bottom: 5px solid white ;
 }
 
 .title-styling {
@@ -43,37 +45,37 @@
     }
   }
 }
-@keyframes change-backgrounds {
-  0% {
-    background: url('./Images/app-background.jpg');
-    background-size: cover;
-  }
-  23% {
-    background: url('./Images//app-background.jpg');
-    background-size: cover;
-  }
-  25% {
-    background: url('./Images/bulbasaur-background.jpg');
-    background-size: cover;
-  }
-  48% {
-    background: url('./Images/bulbasaur-background.jpg');
-    background-size: cover;
-  }
-  50% {
-    background: url('./Images/charmander-background.jpg');
-    background-size: cover;
-  }
-  73% {
-    background: url('./Images/charmander-background.jpg');
-    background-size: cover;
-  }
-  75% {
-    background: url('./Images/squirtle-background.jpg');
-    background-size: cover;
-  }
-  100% {
-    background: url('./Images/squirtle-background.jpg');
-    background-size: cover;
-  }
-}
+// @keyframes change-backgrounds {
+//   0% {
+//     background: url('./Images/app-background.jpg');
+//     background-size: cover;
+//   }
+//   23% {
+//     background: url('./Images//app-background.jpg');
+//     background-size: cover;
+//   }
+//   25% {
+//     background: url('./Images/bulbasaur-background.jpg');
+//     background-size: cover;
+//   }
+//   48% {
+//     background: url('./Images/bulbasaur-background.jpg');
+//     background-size: cover;
+//   }
+//   50% {
+//     background: url('./Images/charmander-background.jpg');
+//     background-size: cover;
+//   }
+//   73% {
+//     background: url('./Images/charmander-background.jpg');
+//     background-size: cover;
+//   }
+//   75% {
+//     background: url('./Images/squirtle-background.jpg');
+//     background-size: cover;
+//   }
+//   100% {
+//     background: url('./Images/squirtle-background.jpg');
+//     background-size: cover;
+//   }
+// }

@@ -48,14 +48,14 @@ export class ItemContainer extends React.Component {
             {displayCategories}
           </ul>
           <ul className="category-more__buttons">
-            <button 
+            {this.state.offset !== 0 && <button 
             className="more-item__button"
             onClick={() => this.handlePrevCategories()}
-            >Previous Categories</button>
-            <button 
+            >Previous Categories</button>}
+            {this.state.offset !== 40 && <button 
             className="more-item__button"
             onClick={() => this.handleMoreCategories()}
-            >More Categories</button>
+            >More Categories</button>}
           </ul>
         </article>
         <article className="display-item__article">
@@ -69,3 +69,5 @@ export class ItemContainer extends React.Component {
 // const mapDispatchToProps = dispatch => ({
 //   getItemsByCategory: (category) => dispatch 
 // })
+
+export default connect(null,null)(ItemContainer)

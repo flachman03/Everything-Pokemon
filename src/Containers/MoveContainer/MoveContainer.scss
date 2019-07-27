@@ -1,0 +1,30 @@
+.moves-container {
+  display: flex;
+}
+
+.display-categories__section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-list__header {
+  display: flex;
+  flex-direction: row;
+  & button {
+    width: 30%;
+    height: 25px;
+    border-radius: 10px;
+  }
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.display-moves__section {
+  flex: 5;
+  display: flex;
+  flex-wrap: wrap;
+}

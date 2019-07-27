@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { ItemCard } from '../../Components/ItemCard/ItemCard'
 import { getItemCategories } from '../../apiCalls'
+import { getItems } from '../../Thunks/itemThunks'
 import './ItemContainer.scss'
 
 export class ItemContainer extends React.Component {
@@ -64,3 +65,7 @@ export class ItemContainer extends React.Component {
     )
   }
 }
+
+// const mapDispatchToProps = dispatch => ({
+//   getItemsByCategory: (category) => dispatch 
+// })

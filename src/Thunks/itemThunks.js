@@ -19,3 +19,18 @@ export const getItemsThunk = dispatch => {
     }
   }
 }
+
+export const getItemsByCategory = (id, dispatch) => {
+  const url = `https://pokeapi.co/api/v2/item-category/id`
+  return async dispatch => {
+    const response = await fetch(url)
+    const baseCategoryData = await response.json()
+    const allCategoryData = baseCategoryData.results.map( async category => {
+      const response = await fetch(category.url)
+      const data = await response.json()
+      return data
+    })
+    const categoryData = await Promise.all(allCategoryData)
+    return categoryData
+  }
+}

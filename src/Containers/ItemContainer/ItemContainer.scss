@@ -31,6 +31,7 @@
   outline: none;
   &:hover {
     background: #91D1E2;
+    cursor: pointer;
   }
   &:active {
     background: red;
@@ -50,10 +51,11 @@
   outline: none;
   float: left;
   &:hover {
-    background: hsla(205, 74%, 95%, 0.77)
+    background: hsla(205, 74%, 95%, 0.77);
+    cursor: pointer;
   }
   &:active {
-    background: hsla(360, 78%, 55%, 0.77)
+    background: hsla(360, 78%, 55%, 0.77);
   }
 
 }

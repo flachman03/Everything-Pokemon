@@ -16,14 +16,14 @@ export class PokemonContainer extends React.Component {
     console.log(this.props)
   }
   
-  handleNextPokemon = (offset) => {
-    this.setState({offset: this.state.offset + offset})
+  async handleNextPokemon(offset) {
+    await this.setState({offset: Math.min(this.state.offset + offset, 960)})
     this.props.getMorePokemon(this.state.offset)
     console.log(this.state.offset)
   }
 
-  handlePrevPokemon = (offset) => {
-    this.setState({offset: this.state.offset - offset})
+  async handlePrevPokemon(offset) {
+    await this.setState({offset: Math.max(this.state.offset - offset, 0)})
     this.props.getMorePokemon(this.state.offset)
   }
 

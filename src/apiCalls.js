@@ -4,3 +4,9 @@ export const getItemCategories = (offset) => {
     .then(response => response.json())
     .then(data => data)
 }
+
+export const getMoveCategories = (category) => {
+  const url = `https://pokeapi.co/api/v2/${category}`
+  return fetch(url)
+    .then(response => response.json())
+}

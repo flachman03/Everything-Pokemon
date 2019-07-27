@@ -1,3 +1,4 @@
+
 .moves-container {
   display: flex;
 }
@@ -18,13 +19,34 @@
   }
 }
 
-.category-list {
+.move-category-list {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
 }
 
 .display-moves__section {
   flex: 5;
   display: flex;
   flex-wrap: wrap;
+}
+
+.move-category-button {
+  height: 25px;
+  width: 100%;
+  margin: 3px;
+  background: hsla(254, 0%, 73%, 0.85);
+  border: none;
+  color: white;
+  font-size: 20px;
+  border-radius: 20px;
+  outline: none;
+  &:hover {
+    background: #91D1E2;
+    cursor: pointer;
+  }
+  &:active {
+    background: red;
+  }
 }

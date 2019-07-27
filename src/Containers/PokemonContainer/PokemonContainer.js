@@ -39,14 +39,14 @@ export class PokemonContainer extends React.Component {
           {displayPokemon}
         </div>
         <ul className="container__buttons">
-          <button 
+          {this.state.offset !== 0 && <button 
             className="poke-button"
             onClick={() => this.handlePrevPokemon(20)}
-          >Previous</button>
-          <button 
+          >Previous</button>}
+          {this.state.offset !== 960 && <button 
             className="poke-button"
             onClick={() => this.handleNextPokemon(20)}
-          >Next</button>
+          >Next</button>}
         </ul>
       </section>
     )

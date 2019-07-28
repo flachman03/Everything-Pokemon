@@ -12,7 +12,8 @@ import { getGamesThunk } from './Thunks/gameThunks'
 import  PokemonContainer  from './Containers/PokemonContainer/PokemonContainer'
 import  ItemContainer  from './Containers/ItemContainer/ItemContainer'
 import MoveContainer from './Containers/MoveContainer/MoveContainer' 
-
+import RegionContainer from './Containers/RegionContainer/RegionContainer'
+import GameContainer from './Containers/GameContainer/GameContainer';
 
 
 class App extends React.Component {
@@ -74,8 +75,12 @@ class App extends React.Component {
           <Route exact path="/moves" render={() => (
             <MoveContainer data={this.props.moves} />
           )}/>
-          <Route exact path="/regions" />
-          <Route exact path="/games" />
+          <Route exact path="/regions" render={() => (
+            <RegionContainer data={this.props.regions} />
+          )}/>
+          <Route exact path="/games" render={() => (
+            <GameContainer data={this.props.games} />
+          )}/>
           <Route render={() => (
             <>
             <h1>Error: 404</h1>

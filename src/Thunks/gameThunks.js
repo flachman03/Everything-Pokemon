@@ -1,7 +1,7 @@
 import { getGames, hasErrored } from '../Actions/index'
 
 export const getGamesThunk = dispatch => {
-  const url = 'https://pokeapi.co/api/v2/version'
+  const url = 'https://pokeapi.co/api/v2/version-group'
   return async dispatch => {
     try {
       const response = await fetch(url)

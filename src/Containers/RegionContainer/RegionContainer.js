@@ -12,8 +12,13 @@ export class RegionContainer extends React.Component {
 
   render() {
     const { data } = this.props
+    const displayData = data.map( region => {
+      return <RegionCard region={region} />
+    })
     return (
-      <div></div>
+      <section>
+        {displayData}
+      </section>
     )
   }
 }

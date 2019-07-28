@@ -1,4 +1,4 @@
-import {getPokemon, hasErrored } from '../Actions/index'
+import {getPokemon, hasErrored, addPokemon, addPokedex, resetErrored } from '../Actions/index'
 
 export const getPokeThunk = dispatch => {
   const url = 'https://pokeapi.co/api/v2/pokemon'
@@ -35,8 +35,26 @@ export const getMorePokemonThunk = (offset, dispatch)  => {
       dispatch(getPokemon(pokeData))
     }
     catch (error){
-      dispatch(hasErrored(error.message))
+      dispatch(hasErrored('finding your pokemon'))
     }
   }
 }
 
+export const addPokemonThunk = (name, action, dispatch) => {
+  const url = `https://pokeapi.co/api/v2/pokemon/${name}/`
+  return async dispatch => {
+    try {
+      const response = await fetch(url)
+      const newPokemon = await response.json()
+      if(action === 'add pokemon') {
+        dispatch(addPokemon(newPokemon))
+        dispatch(resetErrored(null))
+      } else {
+        dispatch(addPokedex(newPokemon))
+        dispatch(resetErrored(null))
+      }
+    } catch (error) {
+      dispatch(hasErrored('finding your pokemon'))
+    }
+  }
+}

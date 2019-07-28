@@ -14,6 +14,7 @@ import  ItemContainer  from './Containers/ItemContainer/ItemContainer'
 import MoveContainer from './Containers/MoveContainer/MoveContainer' 
 import RegionContainer from './Containers/RegionContainer/RegionContainer'
 import GameContainer from './Containers/GameContainer/GameContainer';
+import UserContainer from './Containers/UserContainer/UserContainer'
 
 
 class App extends React.Component {
@@ -65,7 +66,9 @@ class App extends React.Component {
           </ul>
         </header>
         <Switch>
-          <Route exact path="/"/>
+          <Route exact path="/" render={() => (
+            <UserContainer />
+          )}/>
           <Route exact path="/pokedex" render={() => (
             <PokemonContainer data={this.props.pokemon}/>
           )}/>

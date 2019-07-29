@@ -13,13 +13,11 @@ export class PokemonContainer extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props)
   }
   
   async handleNextPokemon(offset) {
     await this.setState({offset: Math.min(this.state.offset + offset, 960)})
     this.props.getMorePokemon(this.state.offset)
-    console.log(this.state.offset)
   }
 
   async handlePrevPokemon(offset) {
@@ -30,7 +28,7 @@ export class PokemonContainer extends React.Component {
   render() {
     const { data } = this.props
     const   displayPokemon = data.map( pokemon => {
-      return <PokemonCard pokemon={pokemon}/>
+      return <PokemonCard pokemon={pokemon} key={pokemon.name}/>
     })
 
     return (
@@ -53,7 +51,7 @@ export class PokemonContainer extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   getMorePokemon: (offset) => dispatch(getMorePokemonThunk(offset))
 })
 

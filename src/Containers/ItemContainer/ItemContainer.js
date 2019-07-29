@@ -34,7 +34,7 @@ export class ItemContainer extends React.Component {
   render() {
     const { data } = this.props
     const displayItems = data.map( item => {
-      return <ItemCard item={item}/>
+      return <ItemCard item={item} key={item.name}/>
     })
     const displayCategories = this.state.categories.map( category => {
       return <button

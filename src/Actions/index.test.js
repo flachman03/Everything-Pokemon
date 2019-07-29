@@ -1,4 +1,4 @@
-import { getPokemon, getItems, getMoves, getGames, getRegions, isLoading, hasErrored } from './index'
+import { getPokemon, getItems, getMoves, getGames, getRegions, isLoading, hasErrored, addPokemon, addPokedex, resetErrored } from './index'
 
 describe('Actions', () => {
   describe('getPokemon', () => {
@@ -100,6 +100,46 @@ describe('Actions', () => {
       const errorMsg = 'Error fetching pokemon'
       const expected = {type: 'HAS_ERRORED', error: errorMsg}
       const result = hasErrored(errorMsg)
+      expect(result).toEqual(expected)
+    })
+  })
+
+  describe('addPokemon', () => {
+
+    it('should return an object with the type of ADD_POKEMON', () => {
+      const expected = {type: 'ADD_POKEMON', data: undefined}
+      const result = addPokemon()
+      expect(result).toEqual(expected)
+    })
+
+    it('should have a parameter and return an object with the data property set to the argument', () => {
+      const pokemon = {name: 'charmander'}
+      const expected = {type: 'ADD_POKEMON', data: pokemon}
+      const result = addPokemon(pokemon)
+      expect(result).toEqual(expected)
+    })
+  })
+
+  describe('addPokedex', () => {
+
+    it('should return an object with the type of ADD_POKEDEX', () => {
+      const expected = {type: 'ADD_POKEDEX', data: undefined}
+      const result = addPokedex()
+      expect(result).toEqual(expected)
+    })
+
+    it('should have a parameter and return an object with the data property set to the argument', () => {
+      const pokemon = {name: 'charmander'}
+      const expected = {type: 'ADD_POKEDEX', data: pokemon}
+      const result = addPokedex(pokemon)
+      expect(result).toEqual(expected)
+    })
+  })  
+
+  describe('resetErrored', () => {
+    it('should return an object with the type of RESET_ERROR and error of null', () => {
+      const expected = {type: 'RESET_ERROR', error: null}
+      const result = resetErrored()
       expect(result).toEqual(expected)
     })
   })

@@ -4,6 +4,10 @@ import { isLoading } from './isLoading'
 import { itemReducer } from './itemReducer'
 import { moveReducer } from './moveReducer'
 import { pokemonReducer } from './PokemonReducer'
+import { regionReducer } from './regionReducer'
+import { userReducer } from './UserReducer'
+
+
 describe('All Reducers', () => {
   describe('gameReducer', () => {
 
@@ -98,6 +102,65 @@ describe('All Reducers', () => {
       const mockAction = {type: 'GET_POKEMON', data: 'mock data'}
       const expected = 'mock data'
       const result = pokemonReducer([], mockAction)
+      expect(result).toEqual(expected)
+    })
+  })
+
+  describe('regionReducer', () => {
+
+    it('should return the default state of an empty array', () => {
+      const expected = []
+      const result = regionReducer(undefined, {})
+      expect(result).toEqual(expected)
+    })
+
+    it('should return the action data with the type GET_REGIONS', () => {
+      const mockAction = {type: 'GET_REGIONS', data: 'mock data'}
+      const expected = 'mock data'
+      const result = regionReducer([], mockAction)
+      expect(result).toEqual(expected)
+    })
+  })
+
+  describe('userReducer', () => {
+    let user;
+    beforeEach(() => {
+      user = {
+        name: 'Ryan',
+        currentLineup: [],
+        pokedex: [],
+        games: []
+      }
+    })
+    it('should return the default state of the user object', () => {
+      const expected = user 
+      const result = userReducer(undefined, {})
+      expect(result).toEqual(expected)
+    })
+
+    it('should add the action data to the users currentLineup with type of ADD_POKEMON', () => {
+      const mockData = {name: 'charmander'}
+      const mockAction = {type: 'ADD_POKEMON', data: mockData}
+      const expected = {
+        name: 'Ryan',
+        currentLineup: [{name: 'charmander'}],
+        pokedex: [],
+        games: []
+      }
+      const result = userReducer(user, mockAction)
+      expect(result).toEqual(expected)
+    })
+
+    it('should add the action data to the pokedex array with the type of ADD_POKEDEX', () => {
+      const mockData = {name: 'charmander'}
+      const mockAction = {type: 'ADD_POKEDEX', data: mockData}
+      const expected = {
+        name: 'Ryan',
+        currentLineup: [],
+        pokedex: [{name: 'charmander'}],
+        games: []
+      }
+      const result = userReducer(user, mockAction)
       expect(result).toEqual(expected)
     })
   })

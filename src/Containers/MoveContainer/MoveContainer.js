@@ -21,7 +21,7 @@ export class MoveContainer extends React.Component {
   render(){
     const { data } = this.props
     const displayMoves = data.map( move => {
-      return <MoveCard move={move}/>
+      return <MoveCard move={move} key={move.name}/>
     })
     const displayCategory = this.state.category.map( category => {
       return <button className="move-category-button">{category.name}</button>

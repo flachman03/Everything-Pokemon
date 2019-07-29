@@ -5,9 +5,7 @@ import { RegionCard } from '../../Components/RegionCard/RegionCard'
 export class RegionContainer extends React.Component {
   constructor() {
     super();
-    this.state = {
-
-    }
+    this.state = {}
   }
 
   render() {

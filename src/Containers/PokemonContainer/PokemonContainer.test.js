@@ -50,6 +50,11 @@ describe('PokemonContainer', () => {
     expect(getMorePokemon).toHaveBeenCalled()
   })
 
+  it('should have data and getMorePokemon props', () => {
+    const expected = {data: mockData, getMorePokemon: getMorePokemon}
+    expect(wrapper.instance().props).toEqual(expected)
+  })
+
   // it('should mapDispatchToProps with the getMorePokemonThunk', () => {
   //   const mockDispatch = jest.fn()
   //   const offset = 20;

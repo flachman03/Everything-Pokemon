@@ -88,12 +88,12 @@ export class UserContainer extends React.Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   user: store.user,
   errorMsg: store.error,
 })
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   addPokemon: (pokemon, action) => dispatch(addPokemonThunk(pokemon, action))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(UserContainer)

@@ -5,3 +5,4 @@ export const isLoading = (state = false, action) => {
     default:
       return state
   }
+}

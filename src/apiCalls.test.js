@@ -17,5 +17,18 @@ describe('Api Calls', () => {
       getItemCategories(0)
       expect(window.fetch).toHaveBeenCalledWith(expected)
     })
+
+    it('should return a parsed response', async () => {
+      const result = await getItemCategories(0)
+      expect(result).toEqual(mockResponse)
+    })
+  })
+
+  describe('getMoveCategories', () => {
+    it('should be called with the correct params', () => {
+      const expected = `https://pokeapi.co/api/v2/move-category`
+      getMoveCategories('move-category')
+      expect(window.fetch).toHaveBeenCalledWith(expected)
+    })
   })
 })

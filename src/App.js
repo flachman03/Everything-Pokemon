@@ -9,12 +9,14 @@ import { getItemsThunk } from './Thunks/itemThunks'
 import { getMovesThunk } from './Thunks/movesThunk'
 import { getRegionsThunk } from './Thunks/regionsThunk'
 import { getGamesThunk } from './Thunks/gameThunks'
-import  PokemonContainer  from './Containers/PokemonContainer/PokemonContainer'
-import  ItemContainer  from './Containers/ItemContainer/ItemContainer'
+
+import PokemonContainer  from './Containers/PokemonContainer/PokemonContainer'
+import ItemContainer  from './Containers/ItemContainer/ItemContainer'
 import MoveContainer from './Containers/MoveContainer/MoveContainer' 
 import RegionContainer from './Containers/RegionContainer/RegionContainer'
 import GameContainer from './Containers/GameContainer/GameContainer';
 import UserContainer from './Containers/UserContainer/UserContainer'
+import { ExpandedPokemonCard } from './Components/ExpandedPokemonCard/ExpandedPokemonCard';
 
 
 export class App extends React.Component {
@@ -84,6 +86,10 @@ export class App extends React.Component {
           <Route exact path="/games" render={() => (
             <GameContainer data={this.props.games} />
           )}/>
+          <Route exact path="/pokedex/:name" render={({ match }) => { 
+            const name = match.params
+            return <ExpandedPokemonCard pokemon={name.name} />
+          }}/>
           <Route render={() => (
             <>
             <h1>Error: 404</h1>

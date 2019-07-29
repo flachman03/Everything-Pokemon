@@ -12,3 +12,15 @@ export const getMoveCategories = (category) => {
     .then(response => response.json())
     .catch(error => error.message)
 }
+
+export const getPokemonByName = async name => {
+  const url = `https://pokeapi.co/api/v2/pokemon/${name}`
+  try {
+    const response = await fetch(url)
+    const data = await response.json()
+    return data
+  }
+  catch (error) {
+    return error.message
+  }
+}

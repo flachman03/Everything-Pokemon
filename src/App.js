@@ -1,9 +1,21 @@
 import React from 'react';
 import './App.scss';
 import PokeSprite from 'react-poke-sprites'
-import logo from './Images/pokemon-logo-vector.png'
+// import logo from './Images/pokemon-logo-vector.png'
 import { Route, NavLink, Switch } from 'react-router-dom'
-import { CardContainer } from './Containers/CardContainer/CardContainer'
+import { connect } from 'react-redux'
+import { getPokeThunk } from './Thunks/pokemonThunks'
+import { getItemsThunk } from './Thunks/itemThunks'
+import { getMovesThunk } from './Thunks/movesThunk'
+import { getRegionsThunk } from './Thunks/regionsThunk'
+import { getGamesThunk } from './Thunks/gameThunks'
+import  PokemonContainer  from './Containers/PokemonContainer/PokemonContainer'
+import  ItemContainer  from './Containers/ItemContainer/ItemContainer'
+import MoveContainer from './Containers/MoveContainer/MoveContainer' 
+import RegionContainer from './Containers/RegionContainer/RegionContainer'
+import GameContainer from './Containers/GameContainer/GameContainer';
+import UserContainer from './Containers/UserContainer/UserContainer'
+
 
 class App extends React.Component {
   constructor() {
@@ -14,11 +26,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-
+    this.props.getPokemon()
+    this.props.getItems()
+    this.props.getMoves()
+    this.props.getRegions()
+    this.props.getGames()
   }
 
   render() {
-    
     return (
       <main className="App">
         <header className="app__header">
@@ -51,12 +66,24 @@ class App extends React.Component {
           </ul>
         </header>
         <Switch>
-          <Route exact path="/"/>
-          <Route exact path="/pokedex" />
-          <Route exact path="/items" /> 
-          <Route exact path="/moves" />
-          <Route exact path="/regions" />
-          <Route exact path="/games" />
+          <Route exact path="/" render={() => (
+            <UserContainer />
+          )}/>
+          <Route exact path="/pokedex" render={() => (
+            <PokemonContainer data={this.props.pokemon}/>
+          )}/>
+          <Route exact path="/items" render={() => (
+            <ItemContainer data={this.props.items} />
+          )}/> 
+          <Route exact path="/moves" render={() => (
+            <MoveContainer data={this.props.moves} />
+          )}/>
+          <Route exact path="/regions" render={() => (
+            <RegionContainer data={this.props.regions} />
+          )}/>
+          <Route exact path="/games" render={() => (
+            <GameContainer data={this.props.games} />
+          )}/>
           <Route render={() => (
             <>
             <h1>Error: 404</h1>
@@ -69,4 +96,15 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = store => ({
+  ...store
+})
+
+const mapDispatchToProps = dispatch => ({
+  getPokemon: () => dispatch(getPokeThunk()),
+  getItems: () => dispatch(getItemsThunk()),
+  getMoves: () => dispatch(getMovesThunk()),
+  getRegions: () => dispatch(getRegionsThunk()),
+  getGames: () => dispatch(getGamesThunk())
+})
+export default connect(mapStateToProps, mapDispatchToProps)(App);

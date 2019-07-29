@@ -58,7 +58,6 @@ export class UserContainer extends React.Component {
             <option>Choose type</option>
             <option value="lineup">Current Linup</option>
             <option value="pokedex">My Pokedex</option>
-            <option value="games">My Games</option>
           </select>
           <button
             type="submit"
@@ -78,9 +77,6 @@ export class UserContainer extends React.Component {
             <ul>
               {displayPokedex}
             </ul>
-          </div>
-          <div className="games-container">
-            <h3>My Games</h3>
           </div>
         </article>
       </section>

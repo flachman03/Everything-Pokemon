@@ -17,7 +17,7 @@ import GameContainer from './Containers/GameContainer/GameContainer';
 import UserContainer from './Containers/UserContainer/UserContainer'
 
 
-class App extends React.Component {
+export class App extends React.Component {
   constructor() {
     super();
     this.state = {

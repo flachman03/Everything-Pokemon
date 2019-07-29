@@ -47,4 +47,9 @@ describe('ItemContainer', () => {
     wrapper.instance().handlePrevCategories()
     expect(wrapper.state().offset).toEqual(expected)
   })
+
+  it('should take in a data prop', () => {
+    const expected = {data: mockData}
+    expect(wrapper.instance().props).toEqual(expected)
+  })
 })

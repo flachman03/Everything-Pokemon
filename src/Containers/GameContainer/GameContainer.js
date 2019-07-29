@@ -14,7 +14,7 @@ export class GameContainer extends React.Component {
   render() {
     const { data } = this.props
     const displayData = data.map( version => {
-      return <GameCard game={version} />
+      return <GameCard game={version} key={version.name}/>
     })
     return (
       <section>

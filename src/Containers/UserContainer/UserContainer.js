@@ -50,11 +50,13 @@ export class UserContainer extends React.Component {
             value={this.state.name} 
             name="name"
             onChange={ e => this.handleOnChange(e)}
+            className='user-form__input'
             />
           <select 
           id="user-select"
           name="searchType"
           onChange={e => this.handleOnChange(e)}
+          className="user-select__input"
           >
             <option>Choose type</option>
             <option value="lineup">Current Linup</option>

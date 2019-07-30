@@ -18,7 +18,10 @@ export class GameContainer extends React.Component {
     })
     return (
       <section>
+        <h2>Find Your Favorite Pokemon Game</h2>
+        <article className="game-display-article">
         {displayData}
+        </article>
       </section>
     )
   }

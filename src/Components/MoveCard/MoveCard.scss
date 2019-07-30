@@ -1,4 +1,13 @@
 .move-card {
   height: 150px;
   width: 150px;
+  background: hsla(254, 0%, 0%, 0.7);
+  margin: 10px;
+  color: #fff;
+  border-radius: 10px;
+  &:hover {
+    background: lightblue;
+    color: black;
+    cursor: pointer;
+  }
 }

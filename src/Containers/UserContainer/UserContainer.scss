@@ -1,17 +1,19 @@
 .user-info__container {
+  height: 100%;
   display: flex;
   justify-content: space-around;
 }
 
 .lineup-container {
   flex: 1;
+  height: 100%;
 }
 
 .pokedex-container {
   flex: 1;
-
+  height: 100%;
 }
 
-.games-container {
-  flex: 1;
+.user-section {
+  height: 100%;
 }

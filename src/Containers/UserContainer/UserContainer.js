@@ -33,14 +33,15 @@ export class UserContainer extends React.Component {
   }
   render() {
     const displayLineup = this.props.user.currentLineup.map( pokemon => {
-      return <PokemonCard pokemon={pokemon} />
+      return <PokemonCard pokemon={pokemon} key={pokemon.name}/>
     })
     const displayPokedex = this.props.user.pokedex.map( pokemon => {
-      return <PokemonCard pokemon={pokemon} />
+      return <PokemonCard pokemon={pokemon} key={pokemon.name}/>
     })
     return (
       <section className="user-section">
         <h1 className="welcome-title">Welome to your Ultimate Pokemon Guide!</h1>
+        <h2 className="welcome-intro">Search for your favorite pokemon and add them to your lineup or pokedex!</h2>
         {this.state.error !== '' && this.state.searchType === 'currentLineup' && <p>{this.state.error}</p>}
         {this.props.errorMsg !== null && <p>{this.props.errorMsg}</p>}
         <form>
@@ -68,9 +69,7 @@ export class UserContainer extends React.Component {
         <article className="user-info__container">
           <div className="lineup-container">
             <h3>Current Lineup</h3>
-            <ul>
               {displayLineup}
-            </ul>
           </div>
           <div className="pokedex-container">
             <h3>My Pokedex</h3>

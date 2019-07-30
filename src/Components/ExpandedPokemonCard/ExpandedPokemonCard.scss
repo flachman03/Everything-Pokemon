@@ -1,0 +1,65 @@
+.expanded-move-list {
+  width: 200px;
+  height: 400px;
+  overflow: auto;
+  padding: 0;
+  margin: 0;
+}
+
+.expanded-move-button {
+  display: block;
+  width: 100%;
+  margin: 2px;
+  text-decoration: none;
+  color: #fff;
+  background: lightblue;
+  border-radius: 10px;
+}
+
+.expanded-pokemon-name {
+  margin-bottom: 0;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.move-list-header {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.expanded-poke-container {
+  display: flex;
+}
+
+.display-stats-list {
+  list-style-type: none;
+  text-align: left;
+}
+
+.expanded-sprite-container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.expanded-stat-container {
+  flex: 1;
+}
+
+.expanded-move-list-container {
+  flex: 1;
+}
+
+.expanded-sprite {
+  height: 150px;
+  width: 150px;
+}
+
+.expanded-base-stats {
+  color: #fff
+}
+
+.expanded-stat-header {
+  color: #fff;
+  text-decoration: underline;
+}

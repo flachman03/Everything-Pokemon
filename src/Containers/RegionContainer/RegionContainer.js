@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { RegionCard } from '../../Components/RegionCard/RegionCard'
+import './RegionContainer.scss'
 
 export class RegionContainer extends React.Component {
   constructor() {
@@ -15,7 +16,10 @@ export class RegionContainer extends React.Component {
     })
     return (
       <section>
+        <h1>Find your Region!</h1>
+        <ul className="region-list">
         {displayData}
+        </ul>
       </section>
     )
   }

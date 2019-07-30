@@ -2,7 +2,7 @@ import { getGamesThunk } from './gameThunks'
 import { getMovesThunk } from './movesThunk'
 import { getRegionsThunk } from './regionsThunk'
 import { getPokeThunk, getMorePokemonThunk, addPokemonThunk } from './pokemonThunks'
-import { getItemsThunk, getItemsbyCategory } from './itemThunks'
+import { getItemsThunk, getItemsbyCategory, getItemsByCategory } from './itemThunks'
 
 describe('All Thunks', () => {
   describe('getGamesthunk', () => {
@@ -151,6 +151,24 @@ describe('All Thunks', () => {
       const url = 'https://pokeapi.co/api/v2/item'
       await getItemsThunk()(mockDispatch)
       expect(window.fetch).toHaveBeenCalledWith(url)
+    })
+
+    it('getItemsThunk should dispatch the getItems action', async () => {
+      const mockAction = {type: 'GET_ITEMS', data: [mockResponse]}
+      await getItemsThunk()(mockDispatch)
+      expect(mockDispatch).toHaveBeenCalledWith(mockAction)
+    })
+
+    it('getItemsByCategory should be called with the correct params', async () => {
+      const url = 'https://pokeapi.co/api/v2/item-category/1'
+      await getItemsByCategory(1)(mockDispatch)
+      expect(window.fetch).toHaveBeenCalledWith(url)
+    })
+
+    it('getItemsByCategory should dispatch getItems action', async () => {
+      const mockAction = {type: 'GET_ITEMS', data: [mockResponse]}
+      await getItemsByCategory(1)(mockDispatch)
+      expect(mockDispatch).toHaveBeenCalledWith(mockAction)
     })
   })
 })

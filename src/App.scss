@@ -1,15 +1,14 @@
-@import './index.scss';
+// @import './index.scss';
 
 .App {
   text-align: center;
-  animation: change-backgrounds 100s ease-in-out infinite;
+  // animation: change-backgrounds 100s ease-in-out infinite;
   height: 100vh;
 }
 
 .app__header {
   height: 250px;
   background: url('./Images/header-background.jpeg');
-  border-bottom: 5px solid white ;
 }
 
 .title-styling {
@@ -39,7 +38,7 @@
   & * {
     color: white;
     font-size: 18px;
-    text-decoration: none;
+    text-decoration: underline;
     &:hover {
       cursor: pointer;
     }
